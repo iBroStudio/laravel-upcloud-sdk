@@ -1,0 +1,11 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "content-length": "1668",
+        "content-type": "application\/json; charset=UTF-8",
+        "date": "Thu, 27 Feb 2025 06:46:34 GMT",
+        "server": "Apache",
+        "strict-transport-security": "max-age=63072000"
+    },
+    "data": "{\n   \"zones\" : {\n      \"zone\" : [\n         {\n            \"description\" : \"Sydney #1\",\n            \"id\" : \"au-syd1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Frankfurt #1\",\n            \"id\" : \"de-fra1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Madrid #1\",\n            \"id\" : \"es-mad1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Helsinki #1\",\n            \"id\" : \"fi-hel1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Helsinki #2\",\n            \"id\" : \"fi-hel2\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Amsterdam #1\",\n            \"id\" : \"nl-ams1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Warsaw #1\",\n            \"id\" : \"pl-waw1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Stockholm #1\",\n            \"id\" : \"se-sto1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Singapore #1\",\n            \"id\" : \"sg-sin1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"London #1\",\n            \"id\" : \"uk-lon1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"Chicago #1\",\n            \"id\" : \"us-chi1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"New York #1\",\n            \"id\" : \"us-nyc1\",\n            \"public\" : \"yes\"\n         },\n         {\n            \"description\" : \"San Jose #1\",\n            \"id\" : \"us-sjo1\",\n            \"public\" : \"yes\"\n         }\n      ]\n   }\n}\n"
+}

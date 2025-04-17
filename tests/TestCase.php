@@ -1,10 +1,17 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace IBroStudio\Upcloud\Tests;
 
+use Bakame\Laravel\Pdp;
+use IBroStudio\DataRepository\Commands\DataRepositoryInstallCommand;
+use IBroStudio\DataRepository\DataRepositoryServiceProvider;
+use IBroStudio\Upcloud\UpcloudServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Saloon\Laravel\SaloonServiceProvider;
+use Spatie\LaravelData\LaravelDataServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +20,20 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'IBroStudio\\Upcloud\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Artisan::call(DataRepositoryInstallCommand::class);
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            UpcloudServiceProvider::class,
+            LaravelDataServiceProvider::class,
+            SaloonServiceProvider::class,
+            Pdp\ServiceProvider::class,
+            DataRepositoryServiceProvider::class,
         ];
     }
 
@@ -28,10 +41,8 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-         foreach (\Illuminate\Support\Facades\File::allFiles(__DIR__ . '/database/migrations') as $migration) {
+        foreach (File::allFiles(__DIR__.'/../database/migrations') as $migration) {
             (include $migration->getRealPath())->up();
-         }
-         */
+        }
     }
 }
